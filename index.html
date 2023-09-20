@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="main.js"></script>
     <script type="module" src="./modulos/api.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Nomina Salas' Home</title>
   </head>
   <body>
@@ -16,24 +17,57 @@
       </div>
       <div class="container-radio">
         <label for="radio-egreso">Egreso</label>
-        <input type="radio" name="radio" id="radio-egreso" required value="egreso"/>
+        <input
+          type="radio"
+          name="eleccion"
+          id="radio-egreso"
+          required
+          value="egreso"
+        />
       </div>
       <div class="container-input">
         <label for="radio/ingreso">Ingreso</label>
-        <input type="radio" name="radio" id="radio/ingreso" required value="ingreso"/>
+        <input
+          type="radio"
+          name="eleccion"
+          id="radio/ingreso"
+          required
+          value="ingreso"
+        />
+      </div>
+      <div class="container-descripcion">
+        <label for="descripcion">Descripcion</label>
+        <textarea
+          name="descripcion"
+          id="descripcion"
+          cols="30"
+          rows="10"
+          placeholder="Descripcion..."
+        ></textarea>
       </div>
       <div class="container-boton">
-        <input type="submit" value="GUARDAR">
+        <input type="submit" value="GUARDAR" />
       </div>
-
     </form>
 
-    <hr>
+    <hr />
 
     <div class="container-tabla">
-        <table id="table">
+      <table id="table">
+        <thead>
+          <tr>
+            <td>N°</td>
+            <td>Valor (COP)</td>
+            <td>Tipo</td>
+            <td>Descripcion</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+          </tr>
+        </thead>
+        <tbody >
 
-        </table>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
