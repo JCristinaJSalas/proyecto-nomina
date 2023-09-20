@@ -26,7 +26,6 @@ const deleteData = async (urlNomina, id) => {
 };
 // Calcular
 const calcular = (total) => {
-  console.log(total);
   document.querySelector('#trFooter').insertAdjacentHTML(
     'beforeend', /*html*/ `
     <td>${total}</td>
@@ -35,6 +34,16 @@ const calcular = (total) => {
 
 
 };
+//Editar
+const editar = async(id, urlNomina) => {
+  let data = await (await fetch(urlNomina)).json();
+  const newData = data.find((e) => {
+    console.log(e)
+  })
+  console.log(`Editar elemento con ID ${id}`, newData);
+
+}
+
 // Read information
 export const writeData = (urlNomina) => {
   addEventListener("DOMContentLoaded", async () => {
@@ -62,12 +71,14 @@ export const writeData = (urlNomina) => {
     const botonesEditar = document.querySelectorAll(".edit");
     const botonesEliminar = document.querySelectorAll(".delete");
     calcular(total);
+
     botonesEditar.forEach((button) => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         const id = button.getAttribute("id");
         // Aquí puedes implementar la lógica para editar la información con el ID proporcionado
-        console.log(`Editar elemento con ID ${id}`);
+        
+        editar(id, urlNomina)
       });
     });
     botonesEliminar.forEach((button) => {
@@ -81,3 +92,4 @@ export const writeData = (urlNomina) => {
     });
   });
 };
+
