@@ -29,7 +29,7 @@ const calcular = (total) => {
   document.querySelector("#trFooter").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
-    <td>${total}</td>
+    <td>$ ${total.toLocaleString("es-ES")}</td>
     `
   );
 };
@@ -37,20 +37,65 @@ const calcular = (total) => {
 
 const editar = async (id, urlNomina) => {
   const response = await (await fetch(`${urlNomina}/${id}`)).json();
-  console.log(response);
-  document.querySelector("#formEdit").insertAdjacentHTML("beforeBegin", /*html*/ `
+
+  document.querySelector("#formEdit").insertAdjacentHTML(
+    "beforeBegin",
+    /*html*/ `
     <label for= "montoNuevo" >Monto:</label>
     <input type="text" name="monto" value="${response.monto}" id= "montoNuevo">
-    <p>Tipo de Gasto: ${response.eleccion} </p>
-    <label for= "egresoNuevo" >Egreso</label>
-    <input type="radio" name="egresoNuevo" value="egreso" id= "egresoNuevo" checked>
-    <label for= "ingresoNuevo" >Ingreso</label>
-    <input type="radio" name="ingresoNuevo" value="ingreso" id= "ingresoNuevo"> <br/>
+    <div class="container-radio">
+        <label for="radio-egreso">Egreso</label>
+        <input
+          type="radio"
+          name="eleccion"
+          id="radio-egreso"
+          required
+          ${response.eleccion === "egreso" ? "checked" : ""}
+          value="egreso"
+        />
+      </div>
+      <div class="container-radio">
+        <label for="radio-ingreso">Ingreso</label>
+        <input
+          type="radio"
+          name="eleccion"
+          id="radio-ingreso"
+          required
+          ${response.eleccion === "ingreso" ? "checked" : ""}
+          value="ingreso"
+        />
+      </div><br/>
     <label for="descripcion">Descripcion</label>
-    <textarea name="descripcion" >${response.descripcion}</textarea>
-    
-  `)
+    <textarea name="descripcion" id="descripcionNueva" >${
+      response.descripcion
+    }</textarea>
+    <div class="container-boton">
+          <input type="submit" value="Guardar" />
+          <div><box-icon name='x'></box-icon></div>
+    </div>
+  `
+  );
+  document.querySelector("#formEdit").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const montoNuevo = document.querySelector("#montoNuevo").value;
+    const nuevoTipo = document.querySelector(
+      'input[name="eleccion"]:checked'
+    ).value;
+    const nuevaDescripcion = document.querySelector("#descripcionNueva").value;
 
+    const nuevaData = {
+      id,
+      monto: montoNuevo,
+      tipo: nuevoTipo,
+      descripcion: nuevaDescripcion,
+    };
+    const res = await fetch(`${urlNomina}/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(nuevaData),
+    });
+    location.reload();
+  });
 };
 
 // Read information
@@ -66,14 +111,18 @@ export const writeData = (urlNomina) => {
       document.querySelector("#tabla").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
-
+        <tr>
         <td>${element.id}</td>
-        <td>${element.monto}</td>
+        <td>$ ${parseFloat(element.monto).toLocaleString("es-ES")}</td>
         <td>${element.eleccion}</td>
         <td>${element.descripcion}</td>
-        <td><button class="edit" id="${element.id}" ><span class="material-symbols-outlined">edit</span></button></td>
-        <td><button class="delete" id='${element.id}'><span class="material-symbols-outlined">delete</span></button></td>
-
+        <td><button class="edit" id="${
+          element.id
+        }" ><box-icon name='edit-alt' color='#000' ></box-icon></button></td>
+        <td><button class="delete" id='${
+          element.id
+        }'><box-icon name='trash' color='#000' ></box-icon></button></td>
+        </tr>
       `
       );
     });
