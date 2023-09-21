@@ -36,82 +36,21 @@ const calcular = (total) => {
 //Editar funcion
 
 const editar = async (id, urlNomina) => {
-  try {
-    // Obtener los datos de la transacción con el ID especificado
-    const response = await fetch(`${urlNomina}/${id}`);
-    if (!response.ok) {
-      console.error("Error al obtener la transacción para editar");
-      return;
-    }
-    const transaction = await response.json();
+  const response = await (await fetch(`${urlNomina}/${id}`)).json();
+  console.log(response);
+  document.querySelector("#formEdit").insertAdjacentHTML("beforeBegin", /*html*/ `
+    <label for= "montoNuevo" >Monto:</label>
+    <input type="text" name="monto" value="${response.monto}" id= "montoNuevo">
+    <p>Tipo de Gasto: ${response.eleccion} </p>
+    <label for= "egresoNuevo" >Egreso</label>
+    <input type="radio" name="egresoNuevo" value="egreso" id= "egresoNuevo" checked>
+    <label for= "ingresoNuevo" >Ingreso</label>
+    <input type="radio" name="ingresoNuevo" value="ingreso" id= "ingresoNuevo"> <br/>
+    <label for="descripcion">Descripcion</label>
+    <textarea name="descripcion" >${response.descripcion}</textarea>
+    
+  `)
 
-    // Mostrar el formulario de edición con los datos de la transacción
-    const formEdit = document.querySelector("#formEdit");
-    formEdit.innerHTML = `
-      <div><span class="material-symbols-outlined close">close</span></div>
-      <input placeholder="${transaction.monto}" id="monto">
-      <div class="container-radio">
-        <label for="radio-egreso">Egreso</label>
-        <input
-          type="radio"
-          name="eleccion"
-          id="radio-egreso"
-          required
-          ${transaction.tipo === "egreso" ? "checked" : ""}
-          value="egreso"
-        />
-      </div>
-      <div class="container-radio">
-        <label for="radio-ingreso">Ingreso</label>
-        <input
-          type="radio"
-          name="eleccion"
-          id="radio-ingreso"
-          required
-          ${transaction.tipo === "ingreso" ? "checked" : ""}
-          value="ingreso"
-        />
-      </div>
-      <input placeholder="${transaction.descripcion}">
-      <button type="submit">Guardar</button>
-    `;
-
-    // Escuchar el evento submit del formulario de edición
-    formEdit.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      // Obtener los nuevos valores del formulario
-      const nuevoMonto = document.getElementById("monto").value;
-      const nuevoTipo = document.querySelector(
-        'input[name="eleccion"]:checked'
-      ).value;
-      const nuevaDescripcion = document.getElementById("descripcion").value;
-
-      // Crear un objeto con los datos actualizados
-      const newData = {
-        monto: nuevoMonto,
-        tipo: nuevoTipo,
-        descripcion: nuevaDescripcion,
-      };
-
-      // Enviar una solicitud PUT para actualizar la transacción
-      const response = await fetch(`${urlNomina}/${id}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(newData),
-      });
-
-      if (response.ok) {
-        console.log("Transacción actualizada con éxito");
-        // Volver a cargar los datos y recalcular el total
-        loadData();
-        calculateTotal();
-      } else {
-        console.error("Error al actualizar la transacción");
-      }
-    });
-  } catch (error) {
-    console.error("Error en la función editar:", error);
-  }
 };
 
 // Read information
