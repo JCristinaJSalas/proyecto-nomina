@@ -105,7 +105,7 @@ const editar = async (id, urlNomina) => {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(nuevaData),
     };
-    let res = await (await fetch(urlNomina + `/${id}`, config)).json();
+    let res = await (await fetch(urlNomina, config)).json();
     console.log(res);
     location.reload();
   });
