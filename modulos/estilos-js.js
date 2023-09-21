@@ -1,0 +1,1 @@
+//const openModal = document.querySelector("")
