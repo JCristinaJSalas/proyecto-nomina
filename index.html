@@ -13,7 +13,7 @@
   </head>
   <body>
     <h1>Nomina Familia Salas</h1>
-    <form>
+    <form id="form-fill">
       <div class="container-input">
         <label for="monto">Cantidad</label>
         <input type="number" name="monto" id="monto" required />
@@ -26,9 +26,10 @@
           id="radio-egreso"
           required
           value="egreso"
+          checked
         />
       </div>
-      <div class="container-input">
+      <div class="container-radio">
         <label for="radio/ingreso">Ingreso</label>
         <input
           type="radio"
@@ -75,6 +76,15 @@
           </tr>
         </tfoot>
       </table>
+    </div>
+
+    <div class="conatiner-edit">
+      <form id="formEdit">
+        <div class="container-boton">
+          <input type="submit" value="Guardar" />
+          <input type="reset" value="Limpiar" />
+        </div>
+      </form>
     </div>
   </body>
 </html>
