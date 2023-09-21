@@ -111,17 +111,17 @@ export const writeData = (urlNomina) => {
       document.querySelector("#tabla").insertAdjacentHTML(
         "beforeend",
         /*html*/ `
-        <tr>
+        <tr class="cuerpo">
         <td>${element.id}</td>
         <td>$ ${parseFloat(element.monto).toLocaleString("es-ES")}</td>
         <td>${element.eleccion}</td>
         <td>${element.descripcion}</td>
         <td><button class="edit" id="${
           element.id
-        }" ><box-icon name='edit-alt' color='#000' ></box-icon></button></td>
+        }" ><box-icon name='edit-alt' color='#264bbde5' ></box-icon></button></td>
         <td><button class="delete" id='${
           element.id
-        }'><box-icon name='trash' color='#000' ></box-icon></button></td>
+        }'><box-icon name='trash' color='#cf1313' ></box-icon></button></td>
         </tr>
       `
       );
