@@ -101,7 +101,7 @@ const editar = async (id, urlNomina) => {
 
     console.log(nuevaData);
     let config = {
-      method: "POST",
+      method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(nuevaData),
     };
