@@ -99,6 +99,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
 .container-boton input {
   font-family: var(--fontFamily);
   border-radius: 15px;
@@ -107,6 +108,12 @@ h1 {
   background-color: var(--color-boton);
   cursor: pointer;
   border: none;
+  transition: 0.5s all;
+}
+.container-boton input:hover{
+  background-color:#3976c1 ;
+  box-shadow: 2px 2px 23px -7px rgba(0,0,0,0.75);
+  color: #fff;
 }
 
 /*CSS de la tabla*/
@@ -162,7 +169,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #111111bd;
+  background-color: #111111ee;
   display: flex;
   opacity: 0;
   pointer-events: none;
@@ -178,16 +185,40 @@ h1 {
   width: 90%;
   max-width: 600px;
   min-height: 90%;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 6px;
   display: grid;
   gap: 1rem;
   place-items: center;
   grid-auto-columns: 100%;
 }
-
+#formEdit{
+    width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 25px 0 10px 0;
+  background-color: var(--colorPrimario);
+  border-radius: 25px;
+}
 .modal .botonCerrar {
   color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  padding-right: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  
+}
+.modal box-icon{
+  transition: 0.5s all;
+}
+.modal box-icon:hover {
+  background-color: #fff;
+  box-shadow: 12px 12px 23px -7px rgba(0,0,0,0.75);
+  cursor: pointer;
+  border-radius: 50px;
 }
 
 footer {
