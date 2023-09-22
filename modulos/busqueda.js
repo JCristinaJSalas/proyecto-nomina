@@ -32,7 +32,7 @@ const realizarBusqueda = async (urlNomina) => {
   const resultadosFiltrados = data.filter((item) =>
     item.descripcion.toLowerCase().includes(terminoBusqueda)
   );
-  mostrarResultados(resultadosFiltrados);
+  inputBusqueda.value === "" ? resultadoTabla.innerHTML = "" : mostrarResultados(resultadosFiltrados);
 };
 
 // mostrar los resultados en la tabla
