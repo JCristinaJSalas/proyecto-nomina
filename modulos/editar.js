@@ -3,7 +3,7 @@ const modal = document.querySelector(".modal");
 
 //Editar funcion
 
-const editar = async (id, urlNomina) => {
+export const editar = async (id, urlNomina) => {
   const response = await (await fetch(`${urlNomina}/${id}`)).json();
   document.querySelector("#formEdit").insertAdjacentHTML(
     "beforeBegin",
