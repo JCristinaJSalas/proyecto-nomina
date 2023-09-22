@@ -10,12 +10,12 @@
   <p>La pagina esta dividida en secciones:</p>
   <ul>
     <li>Formulario</li>
+    <li>Seccion de busqueda</li>
     <li>Tabla de Informacion</li>
   </ul>
 </section>
-
-<h2 >Descripcion de la Plataforma</h2>
 <hr>
+<h2 >Descripcion de la Plataforma</h2>
 <section>
   <h4>Formulario</h4>
   <p>En esta seccion se encuentra un pequeno formulario, basado en tres partes:</p>
@@ -24,6 +24,10 @@
     <li>Tipo de Gasto: Se debe elegir el tipo de gasto al cual se debe hacer referencia.</li>
     <li>Descripcion: Un text-area dedicado a una pequena descripcion del gasto que se realiza. Esto, con el fin de detallar mas el mismo.</li>
   </ul>
+</section>
+<section>
+  <h4>Seccion de busqueda</h4>
+  <p>Esta seccion tiene la funcionalidad de filtrar y buscar informacion en la api con un value dado.</p>
 </section>
 
 <section>
@@ -44,7 +48,7 @@
     <li>HTML: Se utiliza para la estructuracion de la pagina web.</li>
     <li>CSS: Se usa CSS puro para agregar estilos a nuestra pagina.</li>
     <li>Javascript: Se encarga de la logica y el manejo del DOM y la API.</li>
-    <li>IconsGoogle: Agregara iconos a nuestros botones.</li>
+    <li>Boxicons: Agregara iconos a nuestros botones.</li>
     <li>Mockapi: Plataforma para el manejo y creacion de API.</li>
   </ul>
 </section>
