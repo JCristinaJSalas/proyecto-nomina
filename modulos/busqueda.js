@@ -32,11 +32,15 @@ const realizarBusqueda = async (urlNomina) => {
   const resultadosFiltrados = data.filter((item) =>
     item.descripcion.toLowerCase().includes(terminoBusqueda)
   );
-  inputBusqueda.value === "" ? resultadoTabla.innerHTML = "" : mostrarResultados(resultadosFiltrados);
+  console.log(resultadosFiltrados)
+  inputBusqueda.value === "" ? resultadoTabla.innerHTML = "" 
+  : resultadosFiltrados.length === 0 ? resultadoTabla.innerHTML = "No hay tiene conincidencia" : (mostrarResultados(resultadosFiltrados));
+
 };
 
 // mostrar los resultados en la tabla
 const mostrarResultados = (resultadosFiltrados) => {
+  
   resultadoTabla.innerHTML = "";
   resultadoTabla.insertAdjacentHTML(
     "beforeend",
@@ -51,7 +55,8 @@ const mostrarResultados = (resultadosFiltrados) => {
       <tbody>
     `
   );
-  resultadosFiltrados.forEach((resultado) => {
+   resultadosFiltrados.forEach((resultado) => {
+    
     resultadoTabla.insertAdjacentHTML(
       "beforeend",
       /*html*/ `
