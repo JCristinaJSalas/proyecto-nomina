@@ -123,6 +123,7 @@ h1 {
   align-items: center;
   justify-content: center;
   border-bottom: 0.5px solid #000;
+  flex-direction: column;
 }
 .input-container-busqueda {
   width: 50%;
