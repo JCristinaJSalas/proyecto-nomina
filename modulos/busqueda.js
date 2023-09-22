@@ -15,6 +15,10 @@ export const busqueda = async (urlNomina) => {
   iconoBusqueda.addEventListener("click", () => {
     realizarBusqueda(urlNomina);
   });
+  // para telefono
+  inputBusqueda.addEventListener("input", () => {
+    realizarBusqueda(urlNomina);
+  });
 };
 
 // Funcion  busqueda
