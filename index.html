@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="main.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="main.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <link rel="stylesheet" href="style.css" />
+    <title>Nomina Salas' Home</title>
+  </head>
 
-  <title>Nomina Salas' Home</title>
-</head>
-
-<body>
-  <main>
-    <h1>Nomina Familia Salas</h1>
-    <form id="form-fill">
-      <div class="input-container">
-        <label for="monto" class="label">Cantidad</label>
-        <input type="number" id="monto" name="monto" class="text_input" autocomplete="off"
-          placeholder="Ingrese el monto..." required />
-      </div>
-
-      <div class="contenedor-radios">
-        <div class="container-radio">
-          <label for="radio-egreso">Egreso</label>
-          <input type="radio" name="eleccion" id="radio-egreso" required value="egreso" checked />
+  <body>
+    <main>
+      <h1>Nomina Familia Salas</h1>
+      <form id="form-fill">
+        <div class="input-container">
+          <label for="monto" class="label">Cantidad</label>
+          <input
+            type="number"
+            id="monto"
+            name="monto"
+            class="text_input"
+            autocomplete="off"
+            placeholder="Ingrese el monto..."
+            required
+          />
         </div>
-
-        <div class="container-radio">
-          <label for="radio/ingreso">Ingreso</label>
-          <input type="radio" name="eleccion" id="radio/ingreso" required value="ingreso" />
-        </div>
-      </div>
-      <div class="container-descripcion">
-        <label for="descripcion">Descripcion</label>
-        <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripcion..."></textarea>
-      </div>
-      <div class="container-boton">
-        <input type="submit" value="GUARDAR" />
-      </div>
-    </form>
-    <br />
-    <hr />
-    <br />
-
-    <div class="container-tabla">
-      <table>
-        <thead>
-          <tr class="titulo">
-            <td>N°</td>
-            <td>Valor (COP)</td>
-            <td>Tipo</td>
-            <td>Descripcion</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
-          </tr>
-        </thead>
-        <tbody id="body-tabla"></tbody>
-
-        <tfoot>
-          <tr id="trFooter">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Total</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-    <br />
-    <section class="modal">
-      <div class="modal-edit" id="container-form">
-        <form id="formEdit">
-          <div class="container-boton">
-            <div class="botonCerrar"><box-icon name='x'></box-icon>
-            <input type="submit" value="Guardar" />
+        <div class="contenedor-radios">
+          <div class="container-radio">
+            <label for="radio-egreso">Egreso</label>
+            <input
+              type="radio"
+              name="eleccion"
+              id="radio-egreso"
+              required
+              value="egreso"
+              checked
+            />
           </div>
-        </form>
+
+          <div class="container-radio">
+            <label for="radio/ingreso">Ingreso</label>
+            <input
+              type="radio"
+              name="eleccion"
+              id="radio/ingreso"
+              required
+              value="ingreso"
+            />
+          </div>
+        </div>
+        <div class="container-descripcion">
+          <label for="descripcion">Descripcion</label>
+          <textarea
+            name="descripcion"
+            id="descripcion"
+            cols="30"
+            rows="10"
+            placeholder="Descripcion..."
+          ></textarea>
+        </div>
+        <div class="container-boton">
+          <input type="submit" value="GUARDAR" />
+        </div>
+      </form>
+      <br />
+      <hr />
+
+      <div class="container-tabla">
+        <table>
+          <thead>
+            <tr class="titulo">
+              <td>N°</td>
+              <td>Valor (COP)</td>
+              <td>Tipo</td>
+              <td>Descripcion</td>
+              <td>Editar</td>
+              <td>Eliminar</td>
+            </tr>
+          </thead>
+          <tbody id="body-tabla"></tbody>
+
+          <tfoot>
+            <tr id="trFooter">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Total</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2023 - Desarrollado por: Cristina Jerez</p>
-    <div class="container-redes">
-      <!-- <span><box-icon name="instagram" type="logo" color="#000"></box-icon></span>
+
+      <br />
+
+      <section class="modal">
+        <div class="modal-edit" id="container-form">
+          <form id="formEdit">
+            <div class="container-boton">
+              <div class="botonCerrar">
+                <box-icon name="x"></box-icon>
+              </div>
+              <input type="submit" value="Guardar" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 - Desarrollado por: Cristina Jerez</p>
+      <div class="container-redes">
+        <!-- <span><box-icon name="instagram" type="logo" color="#000"></box-icon></span>
       <span><box-icon name="github" type="logo" color="#000"></box-icon></span>
       <span><box-icon name="envelope" color="#000"></box-icon></span> -->
-    </div>
-  </footer>
-</body>
-
+      </div>
+    </footer>
+  </body>
 </html>
