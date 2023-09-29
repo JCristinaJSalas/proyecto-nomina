@@ -1,8 +1,8 @@
-<h1 align="center">Nomina de la Familia Salas </h1>
+<h1 align="center">Manejo de CRUD </h1>
 
 <section>
   <h2>Descripcion</h2>
-  <p>Bienvenido a la pagina creada para llevar un mejor control de las cuentas de la familia Salas.</p>
+  <p>Bienvenido a la pagina creada para llevar cuentas basicas de los hogares. Aqui manejamos una pequena base de datos con JSON-SERVER</p>
 </section>
 
 <section>
@@ -20,7 +20,7 @@
   <h4>Formulario</h4>
   <p>En esta seccion se encuentra un pequeno formulario, basado en tres partes:</p>
   <ul>
-    <li>Cantidad: Es el monto que se agregara en numeros y en COP.</li>
+    <li>Cantidad o Valor: Es el monto que se agregara en numeros y en COP.</li>
     <li>Tipo de Gasto: Se debe elegir el tipo de gasto al cual se debe hacer referencia.</li>
     <li>Descripcion: Un text-area dedicado a una pequena descripcion del gasto que se realiza. Esto, con el fin de detallar mas el mismo.</li>
   </ul>
@@ -52,6 +52,100 @@
     <li>Mockapi: Plataforma para el manejo y creacion de API.</li>
   </ul>
 </section>
+
+
+<section>
+  <h2>Comados para el programador</h2>
+  <p>A continuacion se detallara mas acerca de la url y se da detalle del JSON-server:</p>
+
+#### GET all items
+
+**Method** : `GET`
+
+**URL** : `http://127.0.54.1:5414/nomina`
+
+**Storage** : `src/modules/`
+
+**Module** : `update` 
+
+**Querys** : `(tabla)`
+
+**Autho Required** : `false`
+
+```javascript
+{
+ "nomina": [
+    {
+      "monto": "700000",
+      "eleccion": "egreso",
+      "descripcion": "Arriendo Julio 2023",
+      "id": 1
+    },
+    ...
+  ]
+}
+```
+
+
+
+
+#### POST items
+
+**Method**: `POST`
+
+**URL** : `http://127.0.54.1:5414/nomina`
+
+**Storage** : `src/modules/`
+
+**Module** : `createData` 
+
+**Querys** : `(data)`
+
+**Auth Required** : `False`
+
+```javascript
+{
+ "nomina": [
+    {
+      "monto": "700000",
+      "eleccion": "egreso",
+      "descripcion": "Arriendo Julio 2023",
+      "id": 1
+    },
+    ...
+  ]
+}
+```
+
+
+#### Delete Item
+
+```http
+  DELETE http://127.0.54.1:5414/nomina/:id1
+```
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+
+#### PUT
+
+```http
+  PUT http://127.0.54.1:5414/nomina/:id1
+```
+
+| Parameter     | Type     | Description                |
+| :------------ | :------- | :------------------------- |
+| `id`          | `number` | **Required**. Your API key |
+| `monto`       | `number` | **Required**               |
+| `eleccion`    | `string` | **Required**               |
+| `descripcion` | `string` | **Required**               |
+
+</section>
+
+
 
 <footer>
  <p>Pagina creada con motivos de educacion. Creado por Cristina Salas, estudiante de CampusLands.</p>
