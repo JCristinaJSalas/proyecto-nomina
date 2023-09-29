@@ -2,7 +2,7 @@
 :root {
   --fontFamily: "Roboto", sans-serif;
   --colorBacground: #272530;
-  --colorPrimario: #02182b;
+  --colorPrimario: #000000;
   --color-boton: #ffb17a;
   --colorSecundario: #ffffff92;
   --colorInput: #676f9d;
@@ -327,21 +327,25 @@ input[type="radio"]:checked {
   margin: auto;
   width: 80%;
   max-width: 600px;
-  min-height: 80%;
-  background-color: #ffffff;
+  min-height: 70%;
+  background-color: #ffffff81;
   border-radius: 6px;
   display: grid;
   gap: 1rem;
   place-items: center;
   grid-auto-columns: 100%;
 }
-#formEdit{
-    width: 400px;
+.formulario{
+  width: 400px;
   text-align: center;
   margin: 0 auto;
-  padding: 25px 0 10px 0;
-  background-color: var(--colorPrimario);
+  padding: 25px;
+  background-color: var(--colorBacground);
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .modal .botonCerrar {
   color: #000;
@@ -349,7 +353,6 @@ input[type="radio"]:checked {
   align-items: center;
   justify-content: end;
   width: 100%;
-  padding-right: 25px;
   font-size: 2rem;
   cursor: pointer;
   
@@ -363,8 +366,6 @@ input[type="radio"]:checked {
   cursor: pointer;
   border-radius: 50px;
 }
-
-
 
 footer {
   display: flex;
