@@ -5,34 +5,23 @@ const iconoBusqueda = document.querySelector('box-icon[name="search"]');
 // Funcion para realizar la busqueda
 export const busqueda = async (urlNomina) => {
   // evento co teclado"
-  inputBusqueda.addEventListener("keyup", (event) => {
-    if (event.key === "Enter") {
-      realizarBusqueda(urlNomina);
-    }
-  });
-
+  inputBusqueda.addEventListener("keyup", (event) => event.key === "Enter" ? realizarBusqueda(urlNomina): "");
   // evento con la lupa
-  iconoBusqueda.addEventListener("click", () => {
-    realizarBusqueda(urlNomina);
-  });
+  iconoBusqueda.addEventListener("click", () => realizarBusqueda(urlNomina));
   // para telefono
-  inputBusqueda.addEventListener("input", () => {
-    realizarBusqueda(urlNomina);
-  });
+  inputBusqueda.addEventListener("input", () => realizarBusqueda(urlNomina));
 };
 
 // Funcion  busqueda
 const realizarBusqueda = async (urlNomina) => {
   // convertir la value a minuscula
   const terminoBusqueda = inputBusqueda.value.trim().toLowerCase();
-
   const data = await (await fetch(urlNomina)).json();
-
   // Filtro de data convirtiendolo a minuscula
   const resultadosFiltrados = data.filter((item) =>
     item.descripcion.toLowerCase().includes(terminoBusqueda)
   );
-  mostrarResultados(resultadosFiltrados);
+  terminoBusqueda === "" ? resultadoTabla.innerHTML = "":mostrarResultados(resultadosFiltrados);
 };
 
 // mostrar los resultados en la tabla
