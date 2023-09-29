@@ -26,11 +26,15 @@ export const deleteData = async (urlNomina, idDelete) => {
     location.reload();
   };
   // ------------>  Calcular
-export const calcular = (total) => {
+export const calcular = (emonto,eelecc) => {
+  let total = 0;
+  eelecc === "ingreso"
+      ? (total += parseInt(emonto))
+      : (total -= parseInt(emonto));
     document.querySelector("#trFooter").insertAdjacentHTML(
       "beforeend",
       /*html*/ `
-      <td>$ ${total.toLocaleString("es-ES")}</td>
+      <p>$ ${total.toLocaleString("es-ES")}</p>
       `
     );
   };
@@ -40,11 +44,12 @@ const modal = document.querySelector(".modal");
 
 export const writeData = async (urlNomina) => {
   let res = await (await fetch(urlNomina)).json();
-  let total = 0;
+  
   res.map((element) => {
-    element.eleccion === "ingreso"
-      ? (total += parseInt(element.monto))
-      : (total -= parseInt(element.monto));
+    const emonto = element.monto
+    const eelecc = element.eleccion 
+    calcular(emonto,eelecc)
+    
 
     tabla.insertAdjacentHTML(
       "beforeend",
@@ -66,10 +71,11 @@ export const writeData = async (urlNomina) => {
           </td>
           </tr>
         `
+        
     );
   });
 
-  calcular(total);
+  
   const botonesEditar = document.querySelectorAll(".editBoton");
   const botonesEliminar = document.querySelectorAll(".delete");
 
