@@ -23,16 +23,19 @@
     <li>Cantidad o Valor: Es el monto que se agregara en numeros y en COP.</li>
     <li>Tipo de Gasto: Se debe elegir el tipo de gasto al cual se debe hacer referencia.</li>
     <li>Descripcion: Un text-area dedicado a una pequena descripcion del gasto que se realiza. Esto, con el fin de detallar mas el mismo.</li>
+    <li><img src="./imagenes/Screenshot from 2023-09-29 07-50-20.png" height="450px"/></li>
   </ul>
 </section>
 <section>
   <h4>Seccion de busqueda</h4>
   <p>Esta seccion tiene la funcionalidad de filtrar y buscar informacion en la api con un value dado.</p>
+  <img src="./imagenes/Screenshot from 2023-09-29 07-50-05.png" height="450px"/>
 </section>
 
 <section>
   <h4>Tabla de Informacion</h4>
   <p>Esta tabla se usa especificamente para mostrar en pantalla la informacion que hay almacenada en la API. Destacando el numero de ID, el valor del gasto, el tipo de Gasto, un boton de Editar y un boton de Eliminar.<br> En el final de la tabla se agrega el total de los gasto (ingresos y egresos), teniendo encuenta que los gastos de ingreso son siempre positivos y los datos de egreso son siempre negativos.</p>
+  <img src="./imagenes/Screenshot from 2023-09-29 07-58-53.png" height="450px"/>
 </section>
 
 <section>
@@ -52,8 +55,6 @@
     <li>Mockapi: Plataforma para el manejo y creacion de API.</li>
   </ul>
 </section>
-
-
 <section>
   <h2>Comados para el programador</h2>
   <p>A continuacion se detallara mas acerca de la url y se da detalle del JSON-server:</p>
