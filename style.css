@@ -52,7 +52,7 @@ main p {
 }
 @media screen and (max-width: 768px){
   .contenedor-hero{
-    flex-dirextion:column;
+    flex-direction:column;
     width: 80%;
     }
   }
