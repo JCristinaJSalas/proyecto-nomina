@@ -50,7 +50,12 @@ main p {
   background-color: var(--colorBacground);
   padding: 3%;
 }
-
+@media screen and (max-width: 768px){
+  .contenedor-hero{
+    flex-dirextion:column;
+    width: 80%;
+    }
+  }
 .contenedor-formulario {
   width: 50%;
   margin: 0 auto;
