@@ -49,6 +49,7 @@ main p {
   flex-grow: 1;
   background-color: var(--colorBacground);
   padding: 3%;
+  border-radius: 20px;
 }
 @media screen and (max-width: 768px){
   .contenedor-hero{
@@ -216,6 +217,7 @@ input[type="radio"]:checked {
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   border-radius: 35px;
   position: relative;
   flex-grow: 2;
@@ -262,14 +264,22 @@ input[type="radio"]:checked {
 
 /*CSS de la tabla*/
 .container-tabla {
-  width: 97%;
+  width: 98%;
   height: 500px;
   margin: 1% auto;
   border-radius: 12px;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   color: #000;
+  overflow: hidden;
+  padding: 5px;
+  padding-top: 18%;
+
+}
+table{
+  width: 100%;
+  overflow: hidden;
 }
 
 .container-tabla .titulo {
@@ -278,6 +288,7 @@ input[type="radio"]:checked {
   padding: 0 5px;
   margin-bottom: 10px;
 }
+
 .container-tabla .titulo td {
   border-bottom: 2px solid #000000;
   text-align: center;
@@ -289,7 +300,12 @@ input[type="radio"]:checked {
   padding: 5px ;
   color: #000;
 }
-
+@media screen and (max-width: 768px){
+  .container-tabla .titulo td{
+    font-size: 0.7rem;
+    padding: 0px;
+    }
+  }
 .container-tabla .cuerpo {
   height: 30px;
   text-align: center;
