@@ -47,18 +47,22 @@ export const editar = async (id, urlNomina) => {
     />
   </div>
     </div>
-    <div class="container-descripcion">
-      <label for="descripcion">Descripcion</label>
-      <textarea
-        name="descripcion"
-        id="descripcionNueva"
-        cols="30"
-        rows="10"
-      >${response.descripcion}</textarea>
-    </div>
-    <div class="container-boton">
-    <input type="submit" value="EDITAR" />
-    </div>
+    <div class="input-container">
+    <input
+      name="descripcion"
+      id="descripcionNueva"
+      class="text_input"
+      placeholder ="${response.descripcion}"
+      required
+    />
+    <label for="descripcion" class="label">Descripcion</label>
+  </div>
+
+  <div class="contenedor-boton">
+    <input type="submit" value="Editar" class="input-boton" />
+  </div>
+
+  
 
     
   `

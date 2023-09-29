@@ -1,14 +1,12 @@
 const inputBusqueda = document.querySelector("#busqueda");
-const resultadoTabla = document.querySelector("#resultadoTabla");
+const resultadoTabla = document.querySelector("#body-tabla");
 const iconoBusqueda = document.querySelector('box-icon[name="search"]');
 
 // Funcion para realizar la busqueda
 export const busqueda = async (urlNomina) => {
-  // evento co teclado"
+  // evento co teclado
   inputBusqueda.addEventListener("keyup", (event) => event.key === "Enter" ? realizarBusqueda(urlNomina): "");
   // evento con la lupa
-  iconoBusqueda.addEventListener("click", () => realizarBusqueda(urlNomina));
-  // para telefono
   inputBusqueda.addEventListener("input", () => realizarBusqueda(urlNomina));
 };
 
