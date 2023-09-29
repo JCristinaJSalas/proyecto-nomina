@@ -1,7 +1,7 @@
 import { saveData,writeData } from "./modulos/functionsApi.js";
 import { busqueda} from './modulos/busqueda.js'
 
-const urlNomina = "https://6509ed8cf6553137159c442b.mockapi.io/nomina";
+const urlNomina = "http://127.0.54.1:5414/nomina";
 
 document.addEventListener("DOMContentLoaded", () => {
   saveData(urlNomina);

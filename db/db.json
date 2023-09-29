@@ -1,0 +1,22 @@
+{
+  "nomina": [
+    {
+      "monto": "500000",
+      "eleccion": "egreso",
+      "descripcion": "Arriendo Junio",
+      "id": 1
+    },
+    {
+      "monto": "2500000",
+      "eleccion": "ingreso",
+      "descripcion": "Pago primera quincena 15/jun/2023",
+      "id": 2
+    },
+    {
+      "monto": "174000",
+      "eleccion": "egreso",
+      "descripcion": "Credito pago 20/jun/2023",
+      "id": 4
+    }
+  ]
+}

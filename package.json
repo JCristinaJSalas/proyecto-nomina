@@ -1,0 +1,16 @@
+{
+  "name": "proyecto-nomina",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Nomina de la Familia Salas </h1>",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch ./db/db.json --port 5414 --host 127.0.54.1"
+  },
+  "keywords": [],
+  "author": "JCristinaJSalas",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.3"
+  }
+}
