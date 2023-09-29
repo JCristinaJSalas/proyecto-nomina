@@ -14,6 +14,13 @@
   background-color: transparent;
   color: #fffdfd;
 }
+ul{
+  list-style: none;
+}
+li{
+
+  color: #000;
+}
 html {
   font-size: 14px;
   font-family: var(--fontFamily) !important;
@@ -21,11 +28,15 @@ html {
   background-color: var(--colorPrimario);
   margin: 3% auto;
 }
-
+body{
+  min-height: 100vh;
+  height: 500px;
+}
 main {
   text-align: center;
   width: 90%;
-  margin: 0 auto;
+  min-height: 80vh;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +54,7 @@ main p {
 }
 .contenedor-hero {
   width: 100%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +63,7 @@ main p {
   padding: 3%;
   border-radius: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1035px){
   .contenedor-hero{
     flex-direction:column;
     width: 80%;
@@ -271,10 +283,10 @@ input[type="radio"]:checked {
   display: flex;
   align-items: start;
   justify-content: center;
+  flex-direction: column;
   color: #000;
   overflow: hidden;
   padding: 5px;
-  padding-top: 18%;
 
 }
 table{
@@ -300,7 +312,7 @@ table{
   padding: 5px ;
   color: #000;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1035px){
   .container-tabla .titulo td{
     font-size: 0.7rem;
     padding: 0px;
@@ -386,6 +398,35 @@ table{
   box-shadow: 12px 12px 23px -7px rgba(0,0,0,0.75);
   cursor: pointer;
   border-radius: 50px;
+}
+.icon{
+  font-size: 1.3rem;
+  color: var(--color-boton);
+}
+.icon-trash{
+  font-size: 1.3rem;
+  color: #9c1e1e;
+}
+
+.totalContenedor{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.ingreTotal{
+  color: #5dac14;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.egreTotal{
+  color: #c51d1d;
+
+  font-size: 1rem;
+  font-weight: 400;
+}
+.resTotal{
+  color: #6e90ca;
 }
 
 footer {

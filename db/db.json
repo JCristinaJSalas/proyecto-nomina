@@ -1,28 +1,16 @@
 {
   "nomina": [
     {
-      "monto": "500000",
+      "monto": "2500000",
       "eleccion": "egreso",
-      "descripcion": "Arriendo Junio",
+      "descripcion": "Quincena Mar 15",
       "id": 1
     },
     {
-      "monto": "2500000",
-      "eleccion": "ingreso",
-      "descripcion": "Pago primera quincena 15/jun/2023",
+      "monto": "354000",
+      "eleccion": "egreso",
+      "descripcion": "Servicios Publicos",
       "id": 2
-    },
-    {
-      "monto": "174000",
-      "eleccion": "egreso",
-      "descripcion": "Credito pago 20/jun/2023",
-      "id": 4
-    },
-    {
-      "monto": "5000",
-      "eleccion": "egreso",
-      "descripcion": "Empanada",
-      "id": 5
     }
   ]
 }

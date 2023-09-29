@@ -16,6 +16,8 @@ export const saveData = (urlNomina) => {
       location.reload();
     });
   };
+
+
 //  ------------>  Delete
 export const deleteData = async (urlNomina, idDelete) => {
     let config = {
@@ -25,30 +27,20 @@ export const deleteData = async (urlNomina, idDelete) => {
     let res = await (await fetch(urlNomina + `/${idDelete}`, config)).json();
     location.reload();
   };
+
+
   // ------------>  Calcular
-export const calcular = (emonto,eelecc) => {
-  let total = 0;
-  eelecc === "ingreso"
-      ? (total += parseInt(emonto))
-      : (total -= parseInt(emonto));
-    document.querySelector("#trFooter").insertAdjacentHTML(
-      "beforeend",
-      /*html*/ `
-      <p>$ ${total.toLocaleString("es-ES")}</p>
-      `
-    );
-  };
+
+
 //  ------------>  Read information
 const tabla = document.querySelector("#body-tabla");
 const modal = document.querySelector(".modal");
+
 
 export const writeData = async (urlNomina) => {
   let res = await (await fetch(urlNomina)).json();
   
   res.map((element) => {
-    const emonto = element.monto
-    const eelecc = element.eleccion 
-    calcular(emonto,eelecc)
     
 
     tabla.insertAdjacentHTML(
@@ -61,12 +53,13 @@ export const writeData = async (urlNomina) => {
             <td>${element.descripcion}</td>
             <td>
             <button class="editBoton" id="${element.id}">
-              <box-icon name='edit-alt' color='#ffb17ae5'></box-icon>
+              <i class='bx bx-edit-alt icon' name='edit-alt' color='#ffb17ae5'  ></i>
             </button>
           </td>
           <td>
             <button class="delete" id='${element.id}'>
-              <box-icon name='trash' color='#EC5766'></box-icon>
+              <i class='bx bx-trash icon-trash'name='trash'color='#EC5766'></i>
+              
             </button>
           </td>
           </tr>
@@ -94,3 +87,26 @@ export const writeData = async (urlNomina) => {
     });
   });
 };
+
+let total = 0;
+let ingresos = 0
+let egresos = 0
+export const calcular = async(urlNomina) => {
+
+  const data = await (await fetch(urlNomina)).json();
+  
+  console.log(data)
+
+  data.map((e) =>{
+    console.log(e)
+    if (e.eleccion === "ingreso"){
+      total += Number(e.monto)
+      ingresos += Number(e.monto)
+  
+    }else{
+      total -= Number(e.monto)
+      egresos += Number(e.monto)
+    }
+  })
+  return{total,ingresos,egresos};
+}
