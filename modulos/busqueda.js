@@ -1,3 +1,5 @@
+import { writeData } from "./functionsApi.js";
+
 const inputBusqueda = document.querySelector("#busqueda");
 const resultadoTabla = document.querySelector("#body-tabla");
 const iconoBusqueda = document.querySelector('box-icon[name="search"]');
@@ -11,6 +13,7 @@ export const busqueda = async (urlNomina) => {
 };
 
 // Funcion  busqueda
+const tabla = document.querySelector("#body-tabla");
 const realizarBusqueda = async (urlNomina) => {
   // convertir la value a minuscula
   const terminoBusqueda = inputBusqueda.value.trim().toLowerCase();
@@ -20,38 +23,40 @@ const realizarBusqueda = async (urlNomina) => {
     item.descripcion.toLowerCase().includes(terminoBusqueda)
   );
 
-  terminoBusqueda === "" ? resultadoTabla.innerHTML = "":mostrarResultados(resultadosFiltrados);
+  terminoBusqueda === "" ? writeData(urlNomina): mostrarResultados(resultadosFiltrados);
 };
 
+
+
 // mostrar los resultados en la tabla
+
 const mostrarResultados = (resultadosFiltrados) => {
+
   
-  resultadoTabla.innerHTML = "";
-  resultadoTabla.insertAdjacentHTML(
+  resultadosFiltrados.map((info) =>{
+    console.log(info.descripcion)
+    tabla.innerHTML =" "
+    tabla.insertAdjacentHTML(
     "beforeend",
-    /*html*/ `
-      <thead>
-          <tr class="titulo">
-              <td>Descripcion</td>
-              <td>Tipo</td>
-              <td>Valor (COP)</td>
-          </tr>
-      </thead>
-      <tbody>
     `
-  );
-   resultadosFiltrados.forEach((resultado) => {
-    
-    resultadoTabla.insertAdjacentHTML(
-      "beforeend",
-      /*html*/ `
-          <tr>
-              <td>${resultado.descripcion}</td>
-              <td>${resultado.eleccion}</td>
-              <td>$ ${parseFloat(resultado.monto).toLocaleString("es-ES")}</td>
-          </tr>
-        `
-    );
-  });
-  resultadoTabla.insertAdjacentHTML("beforeend", /*html*/ `</tbody>`);
-};
+        <tr class="cuerpo">
+          <td>${info.id}</td>
+          <td>$ ${parseFloat(info.monto).toLocaleString("es-ES")}</td>
+          <td>${info.eleccion}</td>
+          <td>${info.descripcion}</td>
+          <td>
+          <button class="editBoton" id="${info.id}">
+            <box-icon name='edit-alt' color='#ffb17ae5'></box-icon>
+          </button>
+        </td>
+        <td>
+          <button class="delete" id='${info.id}'>
+            <box-icon name='trash' color='#EC5766'></box-icon>
+          </button>
+        </td>
+        </tr>
+      `
+  )
+  })
+  
+}
