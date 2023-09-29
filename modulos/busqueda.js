@@ -21,11 +21,13 @@ const realizarBusqueda = async (urlNomina) => {
   const resultadosFiltrados = data.filter((item) =>
     item.descripcion.toLowerCase().includes(terminoBusqueda)
   );
+
   terminoBusqueda === "" ? resultadoTabla.innerHTML = "":mostrarResultados(resultadosFiltrados);
 };
 
 // mostrar los resultados en la tabla
 const mostrarResultados = (resultadosFiltrados) => {
+  
   resultadoTabla.innerHTML = "";
   resultadoTabla.insertAdjacentHTML(
     "beforeend",
@@ -40,7 +42,8 @@ const mostrarResultados = (resultadosFiltrados) => {
       <tbody>
     `
   );
-  resultadosFiltrados.forEach((resultado) => {
+   resultadosFiltrados.forEach((resultado) => {
+    
     resultadoTabla.insertAdjacentHTML(
       "beforeend",
       /*html*/ `
