@@ -56,12 +56,12 @@ export const writeData = async (urlNomina) => {
             <td>${element.descripcion}</td>
             <td>
             <button class="editBoton" id="${element.id}">
-              <box-icon name='edit-alt' color='#264bbde5'></box-icon>
+              <box-icon name='edit-alt' color='#ffb17ae5'></box-icon>
             </button>
           </td>
           <td>
             <button class="delete" id='${element.id}'>
-              <box-icon name='trash' color='#cf1313'></box-icon>
+              <box-icon name='trash' color='#EC5766'></box-icon>
             </button>
           </td>
           </tr>

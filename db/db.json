@@ -17,6 +17,12 @@
       "eleccion": "egreso",
       "descripcion": "Credito pago 20/jun/2023",
       "id": 4
+    },
+    {
+      "monto": "5000",
+      "eleccion": "egreso",
+      "descripcion": "Empanada",
+      "id": 5
     }
   ]
 }
