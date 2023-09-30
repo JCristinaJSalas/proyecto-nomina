@@ -2,15 +2,39 @@
   "nomina": [
     {
       "monto": "2500000",
-      "eleccion": "egreso",
-      "descripcion": "Quincena Mar 15",
+      "eleccion": "ingreso",
+      "descripcion": "Quincena Marzo 15",
       "id": 1
     },
     {
-      "monto": "354000",
+      "monto": "268000",
       "eleccion": "egreso",
-      "descripcion": "Servicios Publicos",
-      "id": 2
+      "descripcion": "Transporte Marzo",
+      "id": 3
+    },
+    {
+      "monto": "6500",
+      "eleccion": "egreso",
+      "descripcion": "Desayuno Lunes",
+      "id": 4
+    },
+    {
+      "monto": "428350",
+      "eleccion": "egreso",
+      "descripcion": "Compra de zapatos",
+      "id": 5
+    },
+    {
+      "monto": "265489",
+      "eleccion": "egreso",
+      "descripcion": "Transporte 🚚 ",
+      "id": 6
+    },
+    {
+      "monto": "26000",
+      "eleccion": "egreso",
+      "descripcion": "Helados Domingo",
+      "id": 7
     }
   ]
 }
