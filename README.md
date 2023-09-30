@@ -13,9 +13,11 @@
     <li>Seccion de busqueda</li>
     <li>Tabla de Informacion</li>
   </ul>
+   <img src="./imagenes/home.PNG" height="450px"/>
 </section>
 <hr>
 <h2 >Descripcion de la Plataforma</h2>
+
 <section>
   <h4>Formulario</h4>
   <p>En esta seccion se encuentra un pequeno formulario, basado en tres partes:</p>
@@ -23,19 +25,19 @@
     <li>Cantidad o Valor: Es el monto que se agregara en numeros y en COP.</li>
     <li>Tipo de Gasto: Se debe elegir el tipo de gasto al cual se debe hacer referencia.</li>
     <li>Descripcion: Un text-area dedicado a una pequena descripcion del gasto que se realiza. Esto, con el fin de detallar mas el mismo.</li>
-    <li><img src="./imagenes/Screenshot from 2023-09-29 07-50-20.png" height="450px"/></li>
+    <li><img src="./imagenes/formulario.PNG" height="450px"/></li>
   </ul>
 </section>
 <section>
   <h4>Seccion de busqueda</h4>
   <p>Esta seccion tiene la funcionalidad de filtrar y buscar informacion en la api con un value dado.</p>
-  <img src="./imagenes/Screenshot from 2023-09-29 07-50-05.png" height="450px"/>
+  <img src="./imagenes/filtro.PNG" height="450px"/>
 </section>
 
 <section>
   <h4>Tabla de Informacion</h4>
   <p>Esta tabla se usa especificamente para mostrar en pantalla la informacion que hay almacenada en la API. Destacando el numero de ID, el valor del gasto, el tipo de Gasto, un boton de Editar y un boton de Eliminar.<br> En el final de la tabla se agrega el total de los gasto (ingresos y egresos), teniendo encuenta que los gastos de ingreso son siempre positivos y los datos de egreso son siempre negativos.</p>
-  <img src="./imagenes/Screenshot from 2023-09-29 07-58-53.png" height="450px"/>
+  <img src="./imagenes/tabla.PNG" height="450px"/>
 </section>
 
 <section>
@@ -54,6 +56,26 @@
     <li>Boxicons: Agregara iconos a nuestros botones.</li>
     <li>Mockapi: Plataforma para el manejo y creacion de API.</li>
   </ul>
+</section>
+<section>
+<h3>Recomendaciones y Notas</h3>
+<h4>Github - <a href="https://github.com/nodejs"> Node</a>  <h3>
+<p>Es importante tener en cuenta que este proyecto utiliza modules de node. Por ello es importante, que luego de clonar este proyecto se instale las dependencias necesarios</p>
+
+```javascript
+npm init -y
+```
+
+<h4>-Github - <a href="https://github.com/typicode/json-server"> JSON-SERVER </a>  <h3>
+<p>Cabe destacar que la pagina funciona con un servidor local, por ello tambien se debe instalar y asegurarse de tener las dependencias necesarias.</p>
+
+```javascript
+npm -E -D i  install json-server
+
+npm run dev
+```
+
+
 </section>
 <section>
   <h2>Comados para el programador</h2>
