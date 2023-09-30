@@ -22,13 +22,13 @@
 
   <body>
     <main>
-      <div class="contenedor-hero">
-        <div class="contenedor-formulario">
+      <div class="contenedor-hero display">
+        <div class="contenedor-formulario display">
           <div class="contenedor-titulo">
             <h1>Proyecto Nomina</h1>
             <p>Proyecto educacional</p>
           </div>
-          <form id="form-fill">
+          <form id="form-fill" class="display">
             <div class="input-container">
               <input
                 type="number"
@@ -39,10 +39,10 @@
                 placeholder=""
                 required
               />
-              <label for="monto" class="label">Cantidad</label>
+              <label for="monto" class="label">Monto</label>
             </div>
-            <div class="contenedor-radios">
-              <div class="container-radio">
+            <div class="contenedor-radios display">
+              <div class="container-radio display">
                 <label for="radio-egreso">Egreso</label>
                 <input
                   type="radio"
@@ -54,7 +54,7 @@
                 />
               </div>
 
-              <div class="container-radio">
+              <div class="container-radio display">
                 <label for="radio/ingreso">Ingreso</label>
                 <input
                   type="radio"
@@ -65,27 +65,25 @@
                 />
               </div>
             </div>
-
             <div class="input-container">
-              <input
+              <textarea
                 name="descripcion"
                 id="descripcion"
                 class="text_input"
                 placeholder="Descripcion..."
                 required
-              />
+              ></textarea>
               <label for="descripcion" class="label">Descripcion</label>
             </div>
-
-            <div class="contenedor-boton">
+            <div class="contenedor-boton display">
               <input type="submit" value="GUARDAR" class="input-boton" />
             </div>
           </form>
         </div>
 
-        <section class="busqueda">
+        <section class="busqueda display">
           <div class="input-container-busqueda">
-            <div class="search-box">
+            <div class="search-box display">
               <input
                 type="text"
                 id="busqueda"
@@ -95,30 +93,36 @@
                 placeholder="Buscar"
                 required
               />
-              <span class="material-symbols-outlined icon">search</span>
+              <i class='bx bx-search-alt icon'></i>
             </div>
           </div>
 
-          <div class="container-tabla">
-            <table id="table" class="table">
-              <thead>
-                <tr>
-                  <th scope="col">N°</th>
-                  <th scope="col">Valor (COP)</th>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">Editar</th>
-                  <th scope="col">Eliminar</th>
+          <div class="container-tabla display table-responsive">
+            <table id="table" class="table table-dark table-hover table-borderless">
+              <thead >
+                <tr >
+                  <th class="titulo">N°</th>
+                  <th >Valor (COP)</th>
+                  <th >Tipo</th>
+                  <th >Descripcion</th>
+                  <th>Editar</th>
+                  <th >Eliminar</th>
                 </tr>
               </thead>
               <tbody id="body-tabla" class="table-group-divider"></tbody>
-
+             
+              <tfoot>
+                <tr colspan="3">
+                  <th></th>
+                  <th scope="col" class="ingre">Ingresos: <b class="ingreTotal"></b></th>
+                  <th></th>
+                  <th scope="col">Egresos:<b class="egreTotal"></b></th>
+                  <th></th>
+                  <th scope="col">Total: <b class="resTotal"></b></th>
+                </tr>
+                
+              </tfoot>
             </table>
-            <ul class="totalContenedor">
-              <li class="ingre">Ingresos: <b class="ingreTotal"></b></li>
-              <li>Egresos: <b class="egreTotal"></b></li> 
-              <li>Total: <b class="resTotal"></b></li>
-            </ul>
           </div>
         </section>
       </div>
@@ -135,13 +139,9 @@
     <footer>
       <p>&copy; 2023 - Desarrollado por: Cristina Jerez</p>
       <div class="container-redes">
-        <!--         <span
-          ><box-icon name="instagram" type="logo" color="#000"></box-icon
-        ></span>
-        <span
-          ><box-icon name="github" type="logo" color="#000"></box-icon
-        ></span>
-        <span><box-icon name="envelope" color="#000"></box-icon></span> -->
+        <i class='bx bxl-instagram' style='color:#ffffff' ></i>
+        <i class='bx bxl-github' style='color:#ffffff' ></i>
+        <i class='bx bxl-gmail' style='color:#ffffff' ></i>
       </div>
     </footer>
 
