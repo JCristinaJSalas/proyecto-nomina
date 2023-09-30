@@ -1,45 +1,56 @@
 // CRUD
 import { editar } from "./editar.js";
 //  ------------> Save information
-export const saveData = (urlNomina) => {
-    let formNomina = document.querySelector("#form-fill");
+export const saveData = async (urlNomina) => {
+  try {
+    const formNomina = document.querySelector("#form-fill");
     formNomina.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(e.target));
-      let config = {
+      const config = {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       };
-      let res = await (await fetch(urlNomina, config)).json();
-      console.log(res);
-      location.reload();
+      const res = await fetch(urlNomina, config);
+      if (res.ok) {
+        console.log("Datos guardados con éxito.");
+        location.reload();
+      } else {
+        console.error("Error al guardar los datos.");
+      }
     });
-  };
-
+  } catch (error) {
+    console.error("Error en saveData:", error);
+  }
+};
 
 //  ------------>  Delete
+// deleteData.js
 export const deleteData = async (urlNomina, idDelete) => {
-    let config = {
+  try {
+    const config = {
       method: "DELETE",
-      headers: { "content-type": "application/json" },
+      headers: { "Content-Type": "application/json" },
     };
-    let res = await (await fetch(urlNomina + `/${idDelete}`, config)).json();
-    location.reload();
-  };
-
-
-  // ------------>  Calcular
-
-
+    const res = await fetch(urlNomina + `/${idDelete}`, config);
+    if (res.ok) {
+      console.log("Datos eliminados con éxito.");
+      location.reload();
+    } else {
+      console.error("Error al eliminar los datos.");
+    }
+  } catch (error) {
+    console.error("Error en deleteData:", error);
+  }
+};
 //  ------------>  Read information
 const tabla = document.querySelector("#body-tabla");
 const modal = document.querySelector(".modal");
 
-
 export const writeData = async (urlNomina) => {
   let res = await (await fetch(urlNomina)).json();
-  
+  tabla.innerHTML = ""
   res.map((element) => {
     
 
@@ -59,7 +70,6 @@ export const writeData = async (urlNomina) => {
           <td>
             <button class="delete" id='${element.id}'>
               <i class='bx bx-trash icon-trash'name='trash'color='#EC5766'></i>
-              
             </button>
           </td>
           </tr>
@@ -79,7 +89,6 @@ export const writeData = async (urlNomina) => {
       editar(idEditar, urlNomina);
     });
   });
-
   botonesEliminar.forEach((e) => {
     e.addEventListener("click", () => {
       const idDelete = e.id;
@@ -87,22 +96,16 @@ export const writeData = async (urlNomina) => {
     });
   });
 };
-
+// ------------>  Calcular
 let total = 0;
 let ingresos = 0
 let egresos = 0
 export const calcular = async(urlNomina) => {
-
   const data = await (await fetch(urlNomina)).json();
-  
-  console.log(data)
-
   data.map((e) =>{
-    console.log(e)
     if (e.eleccion === "ingreso"){
       total += Number(e.monto)
       ingresos += Number(e.monto)
-  
     }else{
       total -= Number(e.monto)
       egresos += Number(e.monto)
