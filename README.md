@@ -42,7 +42,7 @@
 
 <section>
   <h2>Como se usa?</h2>
-  <p>Esta pagina de nomina es creada de manera sencilla y clara. Manejando formularios simples y botones comodos al usuario. Esto con el fin de tener una excelente interaccion. <br> El usuario tendra que agregar el valor del gasto en COP, luego elegira el tipo de gasto al cual pertenece, y antes de enviar la informacion debera ingresar una descripcion.</p>
+  <p>Esta pagina de nomina es creada de manera sencilla y clara. Manejando formularios simples y botones comodos al usuario. Esto con el fin de tener una excelente interaccion. Para adicionar Egresos o Ingresos se debe dar click en el boton de "+" (ubicado en la parte superior derecha)<br> El usuario tendra que agregar el valor del gasto en COP, luego elegira el tipo de gasto al cual pertenece, y antes de enviar la informacion debera ingresar una descripcion.</p>
   <p>La tabla de informacion posee dos botones interactivos, en donde el usuario tendra la posibilidad de editar o eliminar el gasto.</p>
 </section>
 
