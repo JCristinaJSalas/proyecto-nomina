@@ -1,4 +1,4 @@
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#modal-formulario");
 const formEditar = document.querySelector("#formEdit");
 //Editar funcion
 export const editar = async (id, urlNomina) => {
@@ -6,10 +6,10 @@ export const editar = async (id, urlNomina) => {
   formEditar.insertAdjacentHTML(
     "beforeend",
     /*html*/ `
-    <div class="botonCerrar">
+    <div class="botonCerrar" id="boton-cerrar-editar">
       <box-icon name="x" class="cerrar" ></box-icon>
     </div>
-    <div class="input-container display">
+    <div class="input-container ">
       <label for="monto" class="label">Monto</label>
       <input
         type="number"
@@ -21,8 +21,8 @@ export const editar = async (id, urlNomina) => {
         required
       />
     </div>
-    <div class="contenedor-radios display">
-    <div class="container-radio display">
+    <div class="contenedor-radios ">
+    <div class="container-radio ">
     <label for="radio-egreso">Egreso</label>
     <input
       type="radio"
@@ -34,7 +34,7 @@ export const editar = async (id, urlNomina) => {
     />
   </div>
 
-  <div class="container-radio display">
+  <div class="container-radio ">
     <label for="radio-ingreso">Ingreso</label>
     <input
       type="radio"
@@ -65,7 +65,7 @@ export const editar = async (id, urlNomina) => {
 
   `
   );
-  const cerrar = document.querySelector(".botonCerrar");
+  const cerrar = document.querySelector("#boton-cerrar-editar");
 
   formEditar.addEventListener("submit", () => {
     saveEdit(id, urlNomina);
@@ -99,3 +99,4 @@ const cerrarBoton = () => {
   modal.classList.remove("modalShow");
   location.reload();
 };
+

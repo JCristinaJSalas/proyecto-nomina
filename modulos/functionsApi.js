@@ -1,5 +1,12 @@
 // CRUD
 import { editar } from "./editar.js";
+
+const addMonto = document.querySelector(".add")
+const formulario = document.querySelector("#modal-llenar")
+addMonto.addEventListener("click", () => {
+  formulario.classList.add('modalShow')
+})
+
 //  ------------> Save information
 export const saveData = async (urlNomina) => {
   try {
@@ -25,6 +32,7 @@ export const saveData = async (urlNomina) => {
   }
 };
 
+
 //  ------------>  Delete
 // deleteData.js
 export const deleteData = async (urlNomina, idDelete) => {
@@ -44,16 +52,16 @@ export const deleteData = async (urlNomina, idDelete) => {
     console.error("Error en deleteData:", error);
   }
 };
+
 //  ------------>  Read information
 const tabla = document.querySelector("#body-tabla");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#modal-formulario");
 
+// ------------>  Mostrar
 export const writeData = async (urlNomina) => {
   let res = await (await fetch(urlNomina)).json();
   tabla.innerHTML = ""
   res.map((element) => {
-    
-
     tabla.insertAdjacentHTML(
       "beforeend",
       /*html*/ `
@@ -96,6 +104,7 @@ export const writeData = async (urlNomina) => {
     });
   });
 };
+
 // ------------>  Calcular
 let total = 0;
 let ingresos = 0
@@ -113,3 +122,8 @@ export const calcular = async(urlNomina) => {
   })
   return{total,ingresos,egresos};
 }
+
+const botonCerrarLlenar = document.querySelector("#botonCerrarLlenar")
+botonCerrarLlenar.addEventListener("click", () => {
+  formulario.classList.remove('modalShow')
+})
