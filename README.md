@@ -30,7 +30,7 @@
 </section>
 <section>
   <h4>Seccion de busqueda</h4>
-  <p>Esta seccion tiene la funcionalidad de filtrar y buscar informacion en la api con un value dado.</p>
+  <p>Esta seccion tiene la funcionalidad de buscar informacion en la api con palabras de la descripcion del gasto o ingreso dado</p>
   <img src="./imagenes/filtro.PNG" height="450px"/>
 </section>
 
